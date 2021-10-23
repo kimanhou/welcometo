@@ -27,6 +27,7 @@ const FullScreenGallery : React.FC<IProjectFullScreenGalleryProps> = props => {
 
     const offset = imageWidths.slice(0, props.currentImageIndex).reduce((a,b) => a+b+20, 0);
 
+    if(!props.visible) return null;
     return (
         <div className={`full-screen-gallery ${visibleClassName}`}>
             <button className={`close-button`} onClick={() => props.setVisible(false)}>&#x2715;</button>

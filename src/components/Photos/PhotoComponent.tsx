@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Encrypt from '../../business/Encrypt';
 import { useIsMobile } from '../../hooks/UseMediaQuery';
 import { Photo } from '../../model/Photo';
 import './PhotoComponent.scss';
@@ -38,10 +39,10 @@ const PhotoComponent : React.FC<IPhotoProps> = props => {
 
     const getUrl = (photo : Photo) => {
         if (props.isBig) {
-            return photo.urlBig;
+            return Encrypt.decrypt(photo.urlBig, props.hashKey);
         }
 
-        return photo.urlSmall;
+        return Encrypt.decrypt(photo.urlSmall, props.hashKey);
     }
 
     return (
