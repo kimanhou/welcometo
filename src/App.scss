@@ -1,0 +1,46 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './sizes.scss';
+
+.App {
+    text-align: center;
+    background-color: var(--bg);
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: var(--fg);
+    font-family: Timeless;
+
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 0;
+        font-family: Timeless;
+        font-size: 7rem;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 0;
+        font-family: BaliMoon;
+        font-size: 6.5rem;
+        font-weight: 100;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .App {
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 3.5rem;
+        }
+    }
+}

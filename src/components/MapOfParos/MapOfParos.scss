@@ -1,0 +1,65 @@
+.map-of-paros {
+    svg {
+        height: 65vh;
+        width: unset;
+        #outline {
+            fill: none;
+            stroke: var(--fg);
+            stroke-width: 1px;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-opacity:1
+        }
+        circle {
+            opacity: 1;
+            fill: var(--bg);
+            fill-opacity: 1;
+            stroke: var(--fg);
+            stroke-width:2px;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:4;
+            stroke-dasharray:none;
+            stroke-opacity:1;
+            paint-order:stroke markers fill;
+        }
+        .location {
+            cursor: pointer;
+        }
+        .map-marker {
+            fill: var(--fg);
+            stroke: var(--fg);
+            stroke-width:0.264583px;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-opacity:1;
+        }
+        .number {
+            font-style:normal;
+            font-weight:normal;
+            font-size:14.1455px;
+            line-height:1.25;
+            font-family:sans-serif;
+            fill: var(--bg);
+            fill-opacity:1;
+            stroke:none;
+            stroke-width:0.353638;
+        }
+        .location-name {
+            font-size:10.5833px;
+            line-height:1.25;
+            font-family:Timeless;
+            stroke-width:0.264583;
+            color: var(--fg);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .map-of-paros {
+        svg {
+            height: unset;
+            width: 88vw;
+        }
+    }
+}

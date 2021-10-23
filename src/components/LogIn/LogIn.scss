@@ -1,0 +1,28 @@
+.log-in {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    >.log-in-input {
+        border: solid 2px var(--fg);
+        border-radius: 10px;
+        background: none;
+        color: var(--fg);
+        font-size: 2rem;
+        max-width: 14rem;
+        &:focus {
+            outline-width: 0;
+        }
+    }
+    p {
+        margin: 0;
+        margin-top: -18px;
+        font-size: 2rem;
+    }
+    >.underline {
+        border-bottom: solid 1px var(--fg);
+        width: 5rem;
+        margin: 10px auto 40px;
+    }
+}

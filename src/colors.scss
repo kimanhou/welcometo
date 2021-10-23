@@ -1,0 +1,12 @@
+:root {
+    --bg: #e3e4e8;
+    --fg: #282c34;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {	
+    :root {
+        // --bg: #282c34;
+        // --fg: #e3e4e8;
+    }
+}
