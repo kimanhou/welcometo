@@ -1,4 +1,5 @@
 import React from 'react';
+import { myScrollTo } from '../../Util';
 import './MapOfParos.scss';
 
 export interface IMapProps {
@@ -9,6 +10,7 @@ export interface IMapProps {
 const MapOfParos : React.FC<IMapProps> = props => {
     const onClick = (locationNumber : number) => {
         props.setLocationNumber(locationNumber);
+        myScrollTo('location');
     }
 
     return (

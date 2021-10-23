@@ -31,7 +31,7 @@ const Home : React.FC<IHomeProps> = props => {
     }
 
     return (
-        <div className={`home`}>
+        <div className={`home`} id={`top`}>
             <header>
                 <h2>welcome to</h2>
                 <h1>{props.album.name}</h1>
