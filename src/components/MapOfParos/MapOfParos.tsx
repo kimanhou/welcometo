@@ -13,6 +13,14 @@ const MapOfParos : React.FC<IMapProps> = props => {
         myScrollTo('location');
     }
 
+    const selected = (myLocation : number) => {
+        if (myLocation == props.locationNumber) {
+            return 'selected';
+        }
+
+        return '';
+    }
+
     return (
         <div className={`map-of-paros`}>
             <svg viewBox="0 0 220.84649 227.46246" >
@@ -29,14 +37,14 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="parikia" className={`location`} onClick={() => onClick(2)}>
                     <circle id="path996" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,51.749146,82.936159)" />
-                    <path id="map-marker-parikia" className={`map-marker`}
+                    <path id="map-marker-parikia" className={`map-marker ${selected(2)}`}
                         d="m 54.664805,84.28869 c 2.197124,-3.246162 4.7504,-6.22521 6.472843,-9.827382 3.439067,-13.634457 -17.860237,-13.75747 -14.599329,0 1.889274,3.249747 4.091575,6.395152 6.354722,9.520275 0.960108,1.488069 1.282119,0.583274 1.771764,0.307107 z" />
                     <text id="number-parikia" className={`number`} x="50.002518" y="77.846626">
                         <tspan id="tspan875" x="50.002518" y="77.846626">
                             3
                         </tspan>
                     </text>
-                    <text id="name-parikia" className={`location-name`} x="17.041714" y="88.218079" >
+                    <text id="name-parikia" className={`location-name ${selected(2)}`} x="17.041714" y="88.218079" >
                         <tspan id="tspan1023-9" x="17.041714" y="88.218079" >
                             Parikia
                         </tspan>
@@ -45,7 +53,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="naoussa"  className={`location`} onClick={() => onClick(4)}>
                     <circle id="path996-1" r="7.0742612" cy="7.7816868" cx="7.7816868"
                         transform="matrix(0.26458333,0,0,0.26458333,143.48519,34.177538)" />
-                    <path id="map-marker-naoussa" className={`map-marker`}
+                    <path id="map-marker-naoussa" className={`map-marker ${selected(4)}`}
                         transform="matrix(0.26458333,0,0,0.26458333,137.87189,15.614037)"
                         d="m 32.498887,76.466261 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785673,0 7.1405633,12.282509 15.4642203,24.170654 24.0178473,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z" />
                     <text id="number-naoussa" className={`number`} x="142.04846" y="29.527102">
@@ -53,7 +61,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             5
                         </tspan>
                     </text>
-                    <text id="name-naoussa" className={`location-name`} x="136.56477" y="46.83625" >
+                    <text id="name-naoussa" className={`location-name ${selected(4)}`} x="136.56477" y="46.83625" >
                         <tspan id="tspan1023-5" x="136.56477" y="46.83625" >
                             Naoussa
                         </tspan>
@@ -63,7 +71,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                     <circle id="path996-1-5" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,165.17165,147.39823)" />
 
-                    <path id="map-marker-piso-livadi" className={`map-marker`}
+                    <path id="map-marker-piso-livadi" className={`map-marker ${selected(1)}`}
                         transform="matrix(0.26458333,0,0,0.26458333,159.34985,128.87688)"
                         d="m 32.003494,75.967758 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785674,0 7.1405633,12.282509 15.4642204,24.170654 24.0178474,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z" />
                     <text id="number-piso-livadi" className={`number`} x="163.48308" y="141.6729" >
@@ -71,7 +79,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             2
                         </tspan>
                     </text>
-                    <text id="name-logaras" className={`location-name`} x="171.34311" y="151.61153" >
+                    <text id="name-logaras" className={`location-name ${selected(1)}`} x="171.34311" y="151.61153" >
                         <tspan id="tspan1023-8" x="171.34311" y="151.61153" >
                             Piso Livadi
                         </tspan>
@@ -80,7 +88,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="logaras" className={`location`} onClick={() => onClick(0)}>
                     <circle id="path996-1-5-8" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,162.09806,150.80592)" />
-                    <path  id="map-marker-logaras" className={`map-marker`}
+                    <path  id="map-marker-logaras" className={`map-marker ${selected(0)}`}
                         d="m 32.003494,75.967758 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785674,0 7.1405633,12.282509 15.4642204,24.170654 24.0178474,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z"
                         transform="matrix(0.26458333,0,0,-0.26458333,156.43089,173.27946)" />
                     <text id="number-logaras" className={`number`} x="160.15004" y="169.18159">
@@ -88,7 +96,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             1
                         </tspan>
                     </text>
-                    <text id="name-logaras" className={`location-name`} x="171.34311" y="163.27768" >
+                    <text id="name-logaras" className={`location-name ${selected(0)}`} x="171.34311" y="163.27768" >
                         <tspan id="tspan1023-7" x="171.34311" y="163.27768" >
                             Logaras
                         </tspan>
@@ -106,7 +114,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="golden-beach" className={`location`} onClick={() => onClick(3)}>
                     <circle id="path996-1-7" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,145.25543,179.36778)" />
-                    <path id="map-marker-golden-beach" className={`map-marker`}
+                    <path id="map-marker-golden-beach" className={`map-marker ${selected(3)}`}
                         d="m 32.003494,75.967758 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785674,0 7.1405633,12.282509 15.4642204,24.170654 24.0178474,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z"
                         transform="matrix(0.26458333,0,0,0.26458333,139.45002,160.86518)" />
                     <text id="number-golden-beach" className={`number`} x="142.8266" y="174.49269" >
@@ -114,7 +122,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             4
                         </tspan>
                     </text>
-                    <text id="name-drios" className={`location-name`} x="150.21198" y="188.76889" >
+                    <text id="name-drios" className={`location-name ${selected(3)}`} x="150.21198" y="188.76889" >
                         <tspan id="tspan1023-3" x="150.21198" y="188.76889" >
                             Golden Beach
                         </tspan>
@@ -123,7 +131,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="marpissa" className={`location`} onClick={() => onClick(6)}>
                     <circle id="path996-1-55" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,155.21586,138.94583)" />
-                    <path id="map-marker-marpissa" className={`map-marker`}
+                    <path id="map-marker-marpissa" className={`map-marker ${selected(6)}`}
                         d="m 32.003494,75.967758 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785674,0 7.1405633,12.282509 15.4642204,24.170654 24.0178474,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z"
                         transform="matrix(0.26458333,0,0,0.26458333,149.42653,120.56616)" />                 
                     <text id="number-marpissa" className={`number`} x="153.53326" y="134.68599" >
@@ -131,7 +139,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             6
                         </tspan>
                     </text>
-                    <text id="name-marpissa" className={`location-name`} x="110.49829" y="141.75478" >
+                    <text id="name-marpissa" className={`location-name ${selected(6)}`} x="110.49829" y="141.75478" >
                         <tspan id="tspan1023" x="110.49829" y="141.75478" >
                             Marpissa
                             </tspan>
@@ -140,7 +148,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                 <g id="kolimpithres" className={`location`} onClick={() => onClick(5)} >
                     <circle id="path996-1-57" r="7.0742612" cy="7.074533" cx="7.074533"
                         transform="matrix(0.26458333,0,0,0.26458333,118.75183,26.853349)" />
-                    <path id="map-marker-kolimpithres" className={`map-marker`}
+                    <path id="map-marker-kolimpithres" className={`map-marker ${selected(5)}`}
                         d="m 32.003494,75.967758 c 8.304091,-12.268959 17.954268,-23.528353 24.464289,-37.142862 12.998048,-51.531806 -67.503259,-51.996737 -55.1785674,0 7.1405633,12.282509 15.4642204,24.170654 24.0178474,35.982142 3.628755,5.624198 4.845804,2.204501 6.696431,1.16072 z"
                         transform="matrix(0.26458333,0,0,0.26458333,112.90967,8.2319364)" />
                     <text id="number-kolimpithres" className={`number`} x="114.78665" y="20.417269" >
@@ -148,8 +156,7 @@ const MapOfParos : React.FC<IMapProps> = props => {
                             5b
                         </tspan>
                     </text>
-
-                    <text id="name-kolimpithres" className={`location-name`} x="51.120895" y="13.483373" >
+                    <text id="name-kolimpithres" className={`location-name ${selected(5)}`} x="51.120895" y="13.483373" >
                         <tspan id="tspan1023-5-5" x="51.120895" y="13.483373" >
                             Kolimpithres
                         </tspan>

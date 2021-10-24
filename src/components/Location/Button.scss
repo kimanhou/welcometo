@@ -25,11 +25,11 @@
         justify-content: center;
         >.arrow-down {
             margin-left: var(--size-margin-10);
-            animation: arrow-down-animation 2s linear 0s infinite;
+            // animation: arrow-down-animation 2s linear 0s infinite;
         }
         >.arrow-up {
             margin-left: var(--size-margin-10);
-            animation: arrow-up-animation 2s linear 0s infinite;
+            // animation: arrow-up-animation 2s linear 0s infinite;
         }
     }
     >.button-yellow, >.button-border {
@@ -39,6 +39,7 @@
         width: 100%;
         height: 2rem;
         transition: top 0.4s, left 0.4s;
+        border-radius: 10px
     }
     >.button-border {
         border: solid 1px var(--fg);
@@ -82,17 +83,9 @@
 
 @keyframes button-border-animation {
     0% {
-        border: solid 1px var(--color-black);
+        border: solid 1px var(--fg);
     }
     100% {
         border: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .fade-in {
-        >.button {
-            margin: 0 auto;
-        }
     }
 }

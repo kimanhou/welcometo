@@ -10,7 +10,7 @@ const BackToTop : React.FC = props => {
     return (
         <Button onClick={onClickTop} classname={`back-to-top skip-link`}>
             <span>Retour en haut</span>
-            <span className={`arrow-up`}>⌃</span>
+            <span className={`arrow-up`}>&#8593;</span>
         </Button>
     );
 }

@@ -37,7 +37,8 @@ const Home : React.FC<IHomeProps> = props => {
                 <h1>{props.album.name}</h1>
             </header>
             <Map locationNumber={locationNumber} setLocationNumber={setLocationNumber}/>
-            <LocationComponent location={location} hashKey={props.hashKey} />
+            <LocationComponent location={location} hashKey={props.hashKey} 
+                locationNumber={locationNumber} setLocationNumber={setLocationNumber} />
         </div>
     );
 }

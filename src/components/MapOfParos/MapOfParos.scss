@@ -33,6 +33,10 @@
             stroke-linecap:butt;
             stroke-linejoin:miter;
             stroke-opacity:1;
+            &.selected {
+                fill: var(--yellow);
+                stroke: var(--yellow);
+            }
         }
         .number {
             font-style:normal;
@@ -51,6 +55,11 @@
             font-family:Timeless;
             stroke-width:0.264583;
             color: var(--fg);
+            &.selected {
+                text-decoration: underline;
+                text-decoration-color: var(--yellow);
+                text-underline-offset: 10px;
+            }
         }
     }
 }
