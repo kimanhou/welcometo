@@ -1,14 +1,14 @@
 .map-of-crete {
     svg {
-        height: 65vh;
-        width: unset;
+        width: 85vw;
+        height: unset;
         #outline {
             fill: none;
             stroke: var(--fg);
             stroke-width: 1px;
             stroke-linecap:butt;
             stroke-linejoin:miter;
-            stroke-opacity:1
+            stroke-opacity:1;
         }
         circle {
             opacity: 1;
@@ -29,15 +29,19 @@
         .map-marker {
             fill: var(--fg);
             stroke: var(--fg);
-            stroke-width:0.264583px;
+            stroke-width:0.999999px;
             stroke-linecap:butt;
             stroke-linejoin:miter;
             stroke-opacity:1;
+            &.selected {
+                fill: var(--yellow);
+                stroke: var(--yellow);
+            }
         }
         .number {
             font-style:normal;
             font-weight:normal;
-            font-size:14.1455px;
+            font-size:50px;
             line-height:1.25;
             font-family:sans-serif;
             fill: var(--bg);
@@ -46,11 +50,26 @@
             stroke-width:0.353638;
         }
         .location-name {
-            font-size:10.5833px;
+            font-size: 40px;
             line-height:1.25;
             font-family:Timeless;
-            stroke-width:0.264583;
+            stroke-width:0.999999;
             color: var(--fg);
+            &.selected {
+                text-decoration: underline;
+                text-decoration-color: var(--yellow);
+                text-underline-offset: 10px;
+            }
+        }
+        .small {
+            font-size:20px;
+        }
+        .center {
+            text-align: center;
+            text-anchor: middle;
+        }
+        .small-number {
+            font-size:40px;
         }
     }
 }

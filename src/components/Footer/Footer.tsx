@@ -5,6 +5,7 @@ const Footer : React.FC = props => {
     return (
         <footer className={`footer`}>
             Powered by Kim Anh Nguyen
+            <div className={`underline`}></div>
         </footer>
     );
 }

@@ -3,6 +3,7 @@ import MapOfParos, { IMapProps } from '../MapOfParos/MapOfParos';
 import './Home.scss';
 import LocationComponent from '../Location/LocationComponent';
 import Album from '../../model/Album';
+import MapOfCrete from '../MapOfCrete/MapOfCrete';
 
 interface IHomeProps {
     hashKey : string;
