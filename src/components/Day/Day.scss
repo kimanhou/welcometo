@@ -1,9 +1,9 @@
-.location {
+.day {
     margin: var(--size-margin-20) var(--size-margin-60);
 }
 
 @media screen and (max-width: 600px) {
-    .location {
+    .day {
         margin: 0;
     }
 }

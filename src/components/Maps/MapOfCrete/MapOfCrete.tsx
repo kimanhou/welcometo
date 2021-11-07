@@ -1,39 +1,22 @@
 import React from 'react';
-import { myScrollTo } from '../../Util';
-import './MapOfCrete.scss';
-
-export interface IMapProps {
-    locationNumber : number;
-    setLocationNumber : (day : number) => void;
-}
+import { IMapProps } from '../MapOfParos/MapOfParos';
+import '../MapCommon.scss';
+import { onClickLocation, selected } from '../MapCommon';
 
 const MapOfCrete : React.FC<IMapProps> = props => {
-    const onClick = (locationNumber : number) => {
-        props.setLocationNumber(locationNumber);
-        myScrollTo('location');
-    }
-
-    const selected = (myLocation : number) => {
-        if (myLocation == props.locationNumber) {
-            return 'selected';
-        }
-
-        return '';
-    }
-
     return (
-        <div className={`map-of-crete`}>
+        <div className={`map map-of-crete`}>
             <svg viewBox="0 0 1441.5209 486.10135" >
                 <g transform="translate(-447.66461,-234.88208)">
                     <path id="outline"
                         d="m 1347.5485,483.36553 27.44,4.57333 70.3589,-2.46256 9.1466,0.35179 c 5.9404,10.19455 11.7577,20.47985 26.3846,24.27382 8.4437,2.81746 15.6394,-0.60465 23.2184,-2.11077 l 21.8113,-8.09127 7.7395,-6.68409 c 5.1434,3.80883 9.7232,1.41761 14.4235,0.35179 l 27.0882,-10.20204 23.2184,1.05538 c 13.3659,2.80844 25.5661,2.58574 36.5867,-0.70358 l -18.2933,26.73637 -4.2216,8.79486 2.8144,11.96101 3.1661,8.44307 -3.1661,11.96101 c -3.4876,1.48856 -3.8144,5.34771 -5.6287,8.09127 l 0.7036,15.12716 0.7035,17.94152 c 4.7549,12.76671 4.3548,11.04302 17.238,11.25742 8.2973,5.89891 16.6105,11.38992 26.3846,10.20204 12.7286,-2.28878 11.4972,-14.3495 15.8307,-22.51485 14.0533,-3.31644 13.8738,-2.61613 21.1077,-16.18254 l 27.4399,-1.75897 4.9252,-7.73948 18.2933,-0.35179 13.3682,-18.64511 c 2.3602,0.75034 5.4805,3.63126 29.5507,7.03589 6.8982,6.01047 14.053,11.519 22.8666,13.71998 17.5332,-1.97106 21.5968,-15.03473 32.0133,-22.86664 l 12.3128,-20.05228 c 1.5299,-5.17392 7.7542,-5.32536 15.3031,-6.33229 l 5.4528,-1.75898 3.1661,-2.46256 -2.1107,-4.22153 5.9805,-1.40718 1.0554,-2.11077 -3.8698,-4.22153 6.6841,-1.05538 2.8144,-2.11077 -0.3518,7.03589 c -1.4363,0.55232 -3.365,0.5302 -2.1108,4.22153 l -7.3877,7.38768 c -3.7565,3.54624 -8.189,6.9235 -10.202,10.90563 l -0.3518,5.98051 2.1108,5.62871 v 20.05228 l 4.2215,2.81435 5.2769,7.03589 h 8.7949 l 1.7589,2.81436 -2.8143,5.27691 -4.2215,2.46257 -4.5734,0.35179 -1.4072,3.16615 -2.1107,3.86974 -2.1108,5.62871 2.4626,17.94151 -9.1467,21.81126 -11.961,18.29331 -13.3682,14.07178 -15.1271,3.16614 -16.1826,6.6841 -12.6646,2.81435 -5.9805,1.75898 -3.8697,-7.73948 -2.8144,-5.98051 -24.9774,1.05539 -4.9251,2.46256 -10.5538,-4.22153 -3.518,-7.38769 -16.1825,-1.75897 -5.2769,2.81436 -18.6451,3.16615 -14.7754,4.22153 -11.2574,1.40718 -16.8862,8.44306 -22.5148,0.3518 -12.6646,-6.6841 -19.3487,1.40718 -11.2574,-1.05538 -10.5539,3.86974 -30.2543,0.35179 -15.4789,9.14665 -16.5344,3.51795 -17.2379,-1.75897 -16.5343,-2.46256 -9.8503,1.75897 -11.2574,-2.11077 -11.961,-4.22153 -17.9415,9.14665 -23.2185,0.3518 -17.5897,14.77536 -45.3815,3.86974 -11.2574,-0.35179 -13.3682,9.49845 -21.1076,-4.92512 -13.3682,7.03588 -17.9415,-1.75897 -49.603,-0.35179 c -0.4187,-6.02931 -19.8528,-1.6866 -29.9026,-2.46256 l -8.443,6.68409 -29.199,-1.40718 8.4431,-10.55383 -0.3518,-18.6451 1.0554,-9.85025 4.9251,-13.71998 -3.1661,-9.49845 -3.8698,-16.18254 c -3.5602,-6.34892 -8.8819,-12.05729 -17.5897,-16.53434 -16.5444,-0.81844 -44.7803,1.16908 -49.603,-2.46256 -8.0031,-0.76093 -16.524,-4.62858 -24.9774,-8.09127 l -14.7754,-16.88614 -25.681,-5.62871 -30.60609,-14.42357 -10.20204,-8.79486 -25.681,6.3323 -18.6451,2.81436 -26.38458,-2.81436 c -5.22107,-8.37856 -14.19313,-8.83835 -23.57023,-8.44306 l -22.51484,-0.70359 -35.53124,-1.05539 -19.70048,-5.9805 -5.62871,-10.55383 -26.03279,1.05538 -16.18254,0.35179 c -5.04938,-6.2543 -14.0051,-6.37006 -22.16305,-7.73947 -3.41684,-4.00481 -9.06316,-3.99659 -14.77537,-3.86974 -10.71929,1.17385 -17.3983,4.70453 -22.51484,9.14665 -4.28053,-2.29992 -7.17143,-5.66877 -17.23793,-3.51794 l -20.75587,0.35179 -6.68409,5.98051 c -2.60452,-4.10358 -7.95851,-6.67968 -14.77537,-8.44307 l -14.77536,3.86974 -14.42357,-1.75897 -2.46257,-10.20204 c -3.65731,-2.48899 0.18235,-7.06048 -11.25742,-7.38768 l -14.07177,-1.05539 1.05538,-11.60921 c -1.15051,-7.28099 -7.37286,-15.12552 3.16615,-21.10767 l 0.70359,-27.43996 c -3.36234,-6.45768 5.46943,-8.03772 8.44306,-11.96101 l -3.51794,-9.49845 8.79486,-4.57333 2.46256,-13.71998 -4.22153,-10.20204 -1.05538,-4.92512 9.49844,-14.77537 -7.03588,-7.38768 5.9805,-19.70049 4.22153,-10.20203 4.57333,-5.62872 1.05538,-13.01639 c -1.47749,-9.33413 -0.2148,-9.07761 1.05539,-8.79486 l 1.05538,14.07178 -0.35179,15.12716 4.57332,22.86663 10.90563,1.75898 15.83075,7.38768 21.81125,-2.46256 3.51795,-9.85025 -0.3518,-21.10766 -2.46256,-15.12716 -3.51794,-14.07178 -0.70359,-12.6646 2.11077,-17.23792 8.79486,-13.36819 5.9805,-2.11077 9.49845,11.60922 -0.70359,10.55383 4.22154,21.81126 2.11076,26.03278 2.81436,13.71998 10.55383,4.22154 8.09127,1.05538 3.51795,3.51795 12.66459,2.46256 30.25432,0.35179 8.79487,4.57333 h 14.42357 l 8.44306,2.81435 6.6841,-2.11076 16.53433,-0.70359 c 4.54779,-2.81489 6.23922,-9.26513 5.62872,-18.64511 l 14.42357,-1.40717 1.40717,-2.46256 -3.86973,-5.62872 -2.11077,-9.85024 0.70359,-2.46256 5.9805,0.35179 c 5.62871,-5.984 11.25742,-6.15697 16.88613,-7.73947 l 19.3487,5.62871 c 8.16513,7.68932 13.29327,16.70284 15.83075,26.73637 l -5.27692,17.58972 c -5.39574,12.86807 -15.96172,9.07644 -25.3292,9.14666 -4.32547,-1.87061 -7.21713,-4.53778 -15.47895,-4.22153 l -14.77537,3.16615 1.75897,4.22153 10.90563,0.35179 9.49845,6.6841 14.42357,0.70359 c 4.15112,0.41884 5.41628,2.89908 6.3323,5.62871 l -1.05538,1.75897 5.9805,1.05538 2.11077,6.3323 7.03589,1.75897 2.81435,1.40718 18.64511,-13.71998 c 4.81799,2.85721 7.61009,6.52477 7.73947,11.25742 l 3.16615,13.36819 -1.05538,36.23482 32.01329,2.81436 12.6646,-1.05538 6.3323,-5.27692 15.47896,-0.70359 1.75897,2.46256 9.14666,-5.27691 15.8307,5.27691 24.2739,-0.35179 43.2707,-13.71999 21.4594,-17.58972 16.5344,1.40718 3.5179,-3.51794 16.1826,-0.3518 5.9805,5.98051 h 28.1435 l 16.8861,2.81435 16.1826,2.11077 2.8143,-5.27692 6.3323,-0.70359 9.8503,7.38769 23.922,1.40718 1.4072,-8.44307 2.1108,-3.16615 11.961,5.27692 7.7394,-1.05539 3.1662,10.55384 8.0913,-0.70359 6.3323,32.71688 h 8.0912 l 6.3323,2.81435 14.7754,-0.70359 8.0913,-1.75897 z" />
                 </g>
 
-                <g id="matala" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(0)}>
+                <g id="matala" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(0, props.setLocationNumber)}>
                     <circle id="path996-1-57-7" r="7.0742612" cy="680.59705" cx="1158.7065" />
-                    <path id="map-marker-matala" className={`map-marker ${selected(0)}`}
+                    <path id="map-marker-matala" className={`map-marker ${selected(0, props.locationNumber)}`}
                         d="m 1162.4225,679.89438 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(0)}`} x="1024.6077" y="693.19843" >
+                    <text className={`location-name ${selected(0, props.locationNumber)}`} x="1024.6077" y="693.19843" >
                         <tspan id="tspan1023-5-5-7" x="1024.6077" y="693.19843" >
                             Matala
                         </tspan>
@@ -54,14 +37,14 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="preveli" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(1)}>
+                <g id="preveli" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(1, props.setLocationNumber)}>
                     <circle id="path996-1-57-86" r="7.0742612" cy="587.31348" cx="1022.6369" />
-                    <text className={`location-name ${selected(1)}`} x="940.60864" y="626.71002" >
+                    <text className={`location-name ${selected(1, props.locationNumber)}`} x="940.60864" y="626.71002" >
                         <tspan id="tspan1023-5-5-7-1" x="940.60864" y="626.71002" >
                             Preveli
                         </tspan>
                     </text>
-                    <path id="map-marker-preveli" className={`map-marker ${selected(1)}`}
+                    <path id="map-marker-preveli" className={`map-marker ${selected(1, props.locationNumber)}`}
                         d="m 1025.8605,586.51476 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50328,-51.99673 -55.17858,0 7.14058,12.28251 15.46418,24.17066 24.01788,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
                     <text id="number-preveli" className={`number`} x="1011.4089" y="557.24237" >
                         <tspan id="tspan2160" x="1011.4089" y="557.24237" >
@@ -91,11 +74,11 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="loutro" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(2)}>
+                <g id="loutro" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(2, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="563.57465" cx="841.49225" />
-                    <path id="map-marker-loutro" className={`map-marker ${selected(2)}`}
+                    <path id="map-marker-loutro" className={`map-marker ${selected(2, props.locationNumber)}`}
                     d="m 845.2522,562.57094 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50328,-51.99673 -55.17858,0 7.14058,12.28251 15.46418,24.17066 24.01788,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(2)}`} x="715.90161" y="590.66284" >
+                    <text className={`location-name ${selected(2, props.locationNumber)}`} x="715.90161" y="590.66284" >
                         <tspan x="715.90161" y="590.66284">
                             Loutro
                         </tspan>
@@ -107,14 +90,14 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
   
-                <g id="chania" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(3)}>
+                <g id="chania" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(3, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="383.33334" cx="818.15924" />
-                    <text className={`location-name ${selected(3)}`} x="722.25592" y="299.46677" >
+                    <text className={`location-name ${selected(3, props.locationNumber)}`} x="722.25592" y="299.46677" >
                         <tspan x="722.25592" y="299.46677" >
                             Chania
                         </tspan>
                     </text>
-                    <path id="map-marker-chania" className={`map-marker ${selected(3)}`}
+                    <path id="map-marker-chania" className={`map-marker ${selected(3, props.locationNumber)}`}
                         d="m 821.27351,382.30176 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50325,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
                     <text id="number-chania" className={`number`} x="804.90564" y="356.01596" >
                         <tspan x="804.90564" y="356.01596" >
@@ -123,43 +106,43 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="samaria" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(4)}>
+                <g id="samaria" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(4, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="522.06293" cx="795.40717" />
-                    <path id="map-marker-samaria" className={`map-marker ${selected(4)}`}
+                    <path id="map-marker-samaria" className={`map-marker ${selected(4, props.locationNumber)}`}
                         d="m 798.81534,520.59663 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50328,-51.99673 -55.17858,0 7.14058,12.28251 15.46418,24.17066 24.01788,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
                     <text id="number-samaria" className={`number`} x="783.44617" y="494.62296" >
                         <tspan x="783.44617" y="494.62296" >
                             5
                         </tspan>
                     </text>
-                    <text className={`location-name ${selected(4)}`} x="645.89459" y="528.04346" >
+                    <text className={`location-name ${selected(4, props.locationNumber)}`} x="645.89459" y="528.04346" >
                         <tspan x="645.89459" y="528.04346">
                             Samaria
                         </tspan>
                     </text>
                 </g>
 
-                <g id="akrotiri" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(5)}>
+                <g id="akrotiri" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(5, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="364.10721" cx="874.91272" />
-                    <path id="map-marker-akrotiri" className={`map-marker ${selected(5)}`}
+                    <path id="map-marker-akrotiri" className={`map-marker ${selected(5, props.locationNumber)}`}
                     d="m 878.32088,364.15888 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50325,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
                     <text id="number-akrotiri" className={`number`} x="862.24811" y="337.01904" >
                         <tspan x="862.24811" y="337.01904" >
                             6
                         </tspan>
                     </text>
-                    <text className={`location-name ${selected(5)}`} x="873.15375" y="283.5463" >
+                    <text className={`location-name ${selected(5, props.locationNumber)}`} x="873.15375" y="283.5463" >
                         <tspan x="873.15375" y="283.5463">
                             Akrotiri
                         </tspan>
                     </text>
                 </g>
 
-                <g id="elafonissi" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(6)}>
+                <g id="elafonissi" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(6, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="523.13434" cx="591.29358" />
-                    <path id="map-marker-balos" className={`map-marker ${selected(6)}`}
+                    <path id="map-marker-balos" className={`map-marker ${selected(6, props.locationNumber)}`}
                     d="m 594.77458,522.29047 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50325,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(6)}`} x="445.82462" y="562.21167" >
+                    <text className={`location-name ${selected(6, props.locationNumber)}`} x="445.82462" y="562.21167" >
                         <tspan x="445.82462" y="562.21167" >
                             Elafonissi
                         </tspan>
@@ -171,11 +154,11 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="balos" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(7)}>
+                <g id="balos" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(7, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="346.51743" cx="618.15918" />
-                    <path id="map-marker-balos" className={`map-marker ${selected(7)}`}
+                    <path id="map-marker-balos" className={`map-marker ${selected(7, props.locationNumber)}`}
                         d="m 621.68685,345.68968 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50325,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(7)}`} x="568.70593" y="263.79401" >
+                    <text className={`location-name ${selected(7, props.locationNumber)}`} x="568.70593" y="263.79401" >
                         <tspan x="568.70593" y="263.79401" >
                             Balos
                         </tspan>
@@ -187,34 +170,37 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="rethymno" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(8)}>
+                <g id="rethymno" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(8, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="468.32632" cx="1038.761" />
-                    <text className={`location-name ${selected(8)}`} x="969.96722" y="380.11267" >
+                    <text className={`location-name ${selected(8, props.locationNumber)}`} x="969.96722" y="380.11267" >
                         <tspan x="969.96722" y="380.11267" >
                             Rethymno
                         </tspan>
                     </text>
-                    <path id="map-marker-rethymno" className={`map-marker ${selected(8)}`}
+                    <path id="map-marker-rethymno" className={`map-marker ${selected(8, props.locationNumber)}`}
                         d="m 1041.8623,466.84082 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.50325,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text id="number-rethymno" className={`number small-number`} x="1018.7966" y="434.8179" >
+                    <text id="number-rethymno" className={`number middle-number`} x="1018.7966" y="434.8179" >
                         <tspan x="1018.7966" y="434.8179">
                             8b
                         </tspan>
                     </text>
                 </g>
 
-                <g id="heraklion" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(9)}>
+                <g id="heraklion" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(10, props.setLocationNumber)}>
                     <circle id="path996-1-57" r="7.0742612" cy="483.89322" cx="1343.1511" />
-                    <text className={`location-name ${selected(9)}`} x="1373.1428" y="476.84094" >
+                    <text className={`location-name ${selected(10, props.locationNumber)}`} x="1373.1428" y="476.84094" >
                         <tspan id="tspan1023-5-5" x="1373.1428" y="476.84094" >
                             Heraklion
                         </tspan>
                     </text>
-                    <path id="map-marker-heraklion" className={`map-marker ${selected(9)}`}
+                    <path id="map-marker-heraklion" className={`map-marker ${selected(10, props.locationNumber)}`}
                         d="m 1346.4485,483.36553 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text id="number-heraklion" className={`number`} x="1331.1901" y="458.03632" >
-                        <tspan id="tspan2363" x="1331.1901" y="458.03632" >
-                            9
+                    <text id="number-heraklion" className={`number small-number`} x="1320.5255" y="441.2128" >
+                        <tspan x="1322.5255" y="441.2128">
+                            10
+                        </tspan>
+                        <tspan x="1325.5255" y="465.2128" >
+                            11
                         </tspan>
                     </text>
                 </g>
@@ -228,11 +214,18 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="margarites" transform="translate(-447.66461,-234.88208)">
+                <g id="margarites" transform="translate(-447.66461,-234.88208)"className={`location`} onClick={() => onClickLocation(9, props.setLocationNumber)} >
                     <circle r="7.0742612" cy="477.38504" cx="1133.1299" />
-                    <text className={`location-name small`} x="1143.6836" y="485.12448" >
+                    <text className={`location-name small ${selected(9, props.locationNumber)}`} x="1143.6836" y="485.12448" >
                         <tspan x="1143.6836" y="485.12448" >
                             Margarites
+                        </tspan>
+                    </text>
+                    <path id="map-marker-margarites" className={`map-marker ${selected(9, props.locationNumber)}`}
+                        d="m 1137.1777,476.90586 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
+                    <text id="number-margarites" className={`number`} x="1121.7028" y="449.82846" >
+                        <tspan x="1121.7028" y="449.82846" >
+                            9
                         </tspan>
                     </text>
                 </g>
@@ -246,18 +239,18 @@ const MapOfCrete : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="spinalonga" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClick(10)}>
+                <g id="spinalonga" transform="translate(-447.66461,-234.88208)" className={`location`} onClick={() => onClickLocation(11, props.setLocationNumber)} >
                     <circle r="7.0742612" cy="510.6965" cx="1622.7612" />
-                    <text className={`location-name ${selected(10)}`} x="1638.0043" y="517.5368" >
+                    <text className={`location-name ${selected(11, props.locationNumber)}`} x="1638.0043" y="517.5368" >
                         <tspan x="1638.0043" y="517.5368" >
                             Spinalonga
                         </tspan>
                     </text>
-                    <path id="map-marker-spinalonga" className={`map-marker ${selected(10)}`}
+                    <path id="map-marker-spinalonga" className={`map-marker ${selected(11, props.locationNumber)}`}
                     d="m 1625.7557,510.14423 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text id="number-rethymno" className={`number`} x="1593.8502" y="483.36554" >
-                        <tspan x="1593.8502" y="483.36554" >
-                            10
+                    <text id="number-rethymno" className={`number`} x="1591.8502" y="483.36554" >
+                        <tspan x="1591.8502" y="483.36554" >
+                            12
                         </tspan>
                     </text>
                 </g>

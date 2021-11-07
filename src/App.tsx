@@ -6,8 +6,8 @@ import LoginBlocker from './components/LogIn/LoginBlocker';
 import Album from './model/Album';
 
 const App : React.FC = props => {
-    const [album, setAlbum] = useState<Album | null>(null);
-    const [hashKey, setHashKey] = useState<string | null>(null);
+    const [ album, setAlbum ] = useState<Album | null>(null);
+    const [ hashKey, setHashKey ] = useState<string | null>(null);
     const onLogin = (hashKey : string) => {
         const album = Album.getAlbum(hashKey);
         if (album != null) {

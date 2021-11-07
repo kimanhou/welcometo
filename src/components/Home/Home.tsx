@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import MapOfParos, { IMapProps } from '../MapOfParos/MapOfParos';
-import './Home.scss';
-import LocationComponent from '../Location/LocationComponent';
 import Album from '../../model/Album';
-import MapOfCrete from '../MapOfCrete/MapOfCrete';
+import DayComponent from '../Day/Day';
+import MapOfCrete from '../Maps/MapOfCrete/MapOfCrete';
+import MapOfMalta from '../Maps/MapOfMalta/MapOfMalta';
+import MapOfMaltaMain from '../Maps/MapOfMalta/MapOfMaltaMain';
+import MapOfMaltaZoom from '../Maps/MapOfMalta/MapOfMaltaZoom';
+import MapOfParos, { IMapProps } from '../Maps/MapOfParos/MapOfParos';
+import './Home.scss';
 
 interface IHomeProps {
     hashKey : string;
@@ -11,9 +14,10 @@ interface IHomeProps {
 }
 
 const Home : React.FC<IHomeProps> = props => {
-    const [locationNumber, setLocationNumber] = useState(0);
-    const locations = props.album.locations;
-    const location = locations[locationNumber];
+    const [ dayNumber, setDayNumber ] = useState(0);
+    const days = props.album.days;
+    const day = days[dayNumber];
+    const daysCount = props.album.days.length;
 
     let Map : React.FC<IMapProps>;
 
@@ -21,11 +25,11 @@ const Home : React.FC<IHomeProps> = props => {
         case 'Paros':
             Map = MapOfParos;
             break;
-        case 'Malte':
-            Map = MapOfParos;
+        case 'Malta':
+            Map = MapOfMalta;
             break;
         case 'Crète':
-            Map = MapOfParos;
+            Map = MapOfCrete;
             break;
         default:
             throw new Error(`Album not recognised : ${props.album.name}`);
@@ -37,9 +41,9 @@ const Home : React.FC<IHomeProps> = props => {
                 <h2>welcome to</h2>
                 <h1>{props.album.name}</h1>
             </header>
-            <Map locationNumber={locationNumber} setLocationNumber={setLocationNumber}/>
-            <LocationComponent location={location} hashKey={props.hashKey} 
-                locationNumber={locationNumber} setLocationNumber={setLocationNumber} />
+            <Map locationNumber={dayNumber} setLocationNumber={setDayNumber}/>
+            <DayComponent day={day} hashKey={props.hashKey} 
+                locationNumber={dayNumber} setLocationNumber={setDayNumber} daysTotal={daysCount}/>
         </div>
     );
 }

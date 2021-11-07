@@ -1,4 +1,5 @@
 import React from 'react';
+import { myScrollTo } from '../../Util';
 import Button from './Button';
 
 interface INextProps {
@@ -9,6 +10,7 @@ interface INextProps {
 const Next : React.FC<INextProps> = props => {
     const onClick = () => {
         props.setLocationNumber(props.locationNumber + 1);
+        myScrollTo('day');
     }
 
     return (

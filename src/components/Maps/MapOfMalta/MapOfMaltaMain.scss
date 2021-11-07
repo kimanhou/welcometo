@@ -1,0 +1,36 @@
+.map-of-malta-main {
+    svg {
+        height: 65vh;
+        width: unset;
+        #ferry-outline {
+            fill:none;
+            stroke:var(--fg);
+            stroke-width:1;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-miterlimit:4;
+            stroke-dasharray:2, 2;
+            stroke-dashoffset:0;
+            stroke-opacity:1;
+        }
+
+        #border-zoom {
+            fill:none;
+            stroke: var(--yellow);
+            stroke-width: 3px;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-opacity: 1;
+            paint-order:stroke markers fill;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .map-of-malta-main {
+        svg {
+            height: unset;
+            width: 88vw;
+        }
+    }
+}

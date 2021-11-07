@@ -1,0 +1,13 @@
+.location {
+    >h2 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .location {
+        >h2 {
+            font-size: 3rem;
+        }
+    }
+}

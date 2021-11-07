@@ -1,29 +1,33 @@
 import { FieldType } from "./deserialization/FieldType";
 import JsonDeserializationHelper from "./deserialization/JsonDeserializationHelper";
-import Location from './Location';
 import parosData from '../data/paros.json';
+import creteData from '../data/crete.json';
+import maltaData from '../data/malta.json';
 import Encrypt from "../business/Encrypt";
+import Day from "./Day";
 
 export default class Album {
     readonly test : string;
     readonly name : string;
-    readonly locations : Location[];
+    readonly days : Day[];
 
-    constructor(test : string, name : string, locations : Location[]) {
+    constructor(test : string, name : string, days : Day[]) {
         this.test = test;
         this.name = name;
-        this.locations = locations;
+        this.days = days;
     }
 
     static deserialize = (json : any) => {
         const test = JsonDeserializationHelper.assertField(json, 'test', FieldType.STRING);
         const name = JsonDeserializationHelper.assertField(json, 'name', FieldType.STRING);
-        const locations = JsonDeserializationHelper.assertField(json, 'locations', FieldType.ARRAY(Location.deserialize));
+        const days = JsonDeserializationHelper.assertField(json, 'days', FieldType.ARRAY(Day.deserialize));
 
-        return new Album(test, name, locations);
+        return new Album(test, name, days);
     }
 
     static PAROS_ALBUM = Album.deserialize(parosData);
+    static CRETE_ALBUM = Album.deserialize(creteData);
+    static MALTA_ALBUM = Album.deserialize(maltaData);
 
     static albums = (() => {
         return Object.values(Album)

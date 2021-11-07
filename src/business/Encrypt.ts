@@ -6,8 +6,13 @@ class Encrypt {
     }
 
     decrypt = (s : string, hashKey : string) => {
-        var bytes  = CryptoJS.AES.decrypt(s, hashKey);
-        return bytes.toString(CryptoJS.enc.Utf8);
+        try{
+            var bytes = CryptoJS.AES.decrypt(s, hashKey);
+            return bytes.toString(CryptoJS.enc.Utf8);
+        }
+        catch(err){
+            return "";
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-.map-of-crete {
+.map {
     svg {
         width: 85vw;
         height: unset;
@@ -48,6 +48,12 @@
             fill-opacity:1;
             stroke:none;
             stroke-width:0.353638;
+            &.small-number {
+                font-size: 32px;
+            }
+            &.middle-number {
+                font-size: 40px;
+            }
         }
         .location-name {
             font-size: 40px;
@@ -64,12 +70,16 @@
         .small {
             font-size:20px;
         }
+        .x-small {
+            font-size: 12px;
+        }
         .center {
             text-align: center;
             text-anchor: middle;
         }
-        .small-number {
-            font-size:40px;
+        .end {
+            text-align: end;
+            text-anchor: end;
         }
     }
 }
