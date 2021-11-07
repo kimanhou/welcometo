@@ -8,6 +8,11 @@
             h1 {
                 margin-top: -40px;
             }
+            >.underline {
+                border-bottom: solid 2px var(--fg);
+                width: 8rem;
+                margin: 5px auto;
+            }
         }
     }
 }
@@ -20,6 +25,9 @@
             header {
                 h1 {
                     margin-top: -20px;
+                }
+                >.underline {
+                    width: 5rem;
                 }
             }
         }

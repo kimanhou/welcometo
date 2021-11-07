@@ -40,6 +40,7 @@ const Home : React.FC<IHomeProps> = props => {
                 <header>
                     <h2>welcome to</h2>
                     <h1>{props.album.name}</h1>
+                    <div className={`underline`}></div>
                 </header>
                 <Map locationNumber={dayNumber} setLocationNumber={setDayNumber}/>
                 <Scroll />
