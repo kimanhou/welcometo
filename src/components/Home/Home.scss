@@ -1,9 +1,13 @@
 .home {
     padding: 0 var(--size-margin-50);
-    header {
-        margin-bottom: var(--size-margin-20);
-        h1 {
-            margin-top: -40px;
+    >.landing {
+        min-height: 100vh;
+        position: relative;
+        header {
+            margin-bottom: var(--size-margin-20);
+            h1 {
+                margin-top: -40px;
+            }
         }
     }
 }
@@ -11,9 +15,12 @@
 @media screen and (max-width: 600px) {
     .home {
         padding: 0 var(--size-margin-20);
-        header {
-            h1 {
-                margin-top: -20px;
+        >.landing {
+            min-height: unset;
+            header {
+                h1 {
+                    margin-top: -20px;
+                }
             }
         }
     }

@@ -7,7 +7,11 @@ interface IScrollProps {
 
 const Scroll : React.FC<IScrollProps> = props => {
     return (
-        <div className={`scroll`}></div>
+        <div className={`scroll`}>
+            <div className={`outline`}>
+                <div className={`dot`}></div>
+            </div>
+        </div>
     );
 }
 

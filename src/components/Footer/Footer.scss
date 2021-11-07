@@ -1,9 +1,12 @@
 .footer {
     padding: var(--size-margin-30);
     font-size: 1rem;
+    >.balimoon {
+        margin-top: -10px;
+    }
     >.underline {
         border-bottom: solid 1px var(--fg);
-        width: 5rem;
-        margin: 10px auto;
+        width: 3rem;
+        margin: 5px auto;
     }
 }

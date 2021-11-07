@@ -3,9 +3,8 @@ import Album from '../../model/Album';
 import DayComponent from '../Day/Day';
 import MapOfCrete from '../Maps/MapOfCrete/MapOfCrete';
 import MapOfMalta from '../Maps/MapOfMalta/MapOfMalta';
-import MapOfMaltaMain from '../Maps/MapOfMalta/MapOfMaltaMain';
-import MapOfMaltaZoom from '../Maps/MapOfMalta/MapOfMaltaZoom';
 import MapOfParos, { IMapProps } from '../Maps/MapOfParos/MapOfParos';
+import Scroll from '../Scroll/Scroll';
 import './Home.scss';
 
 interface IHomeProps {
@@ -37,11 +36,14 @@ const Home : React.FC<IHomeProps> = props => {
 
     return (
         <div className={`home`} id={`top`}>
-            <header>
-                <h2>welcome to</h2>
-                <h1>{props.album.name}</h1>
-            </header>
-            <Map locationNumber={dayNumber} setLocationNumber={setDayNumber}/>
+            <div className={`landing`}>
+                <header>
+                    <h2>welcome to</h2>
+                    <h1>{props.album.name}</h1>
+                </header>
+                <Map locationNumber={dayNumber} setLocationNumber={setDayNumber}/>
+                <Scroll />
+            </div>
             <DayComponent day={day} hashKey={props.hashKey} 
                 locationNumber={dayNumber} setLocationNumber={setDayNumber} daysTotal={daysCount}/>
         </div>
