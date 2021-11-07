@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/welcometo/static/css/main.220c3b1c.chunk.css",
-    "main.js": "/welcometo/static/js/main.6e507fcb.chunk.js",
-    "main.js.map": "/welcometo/static/js/main.6e507fcb.chunk.js.map",
-    "runtime-main.js": "/welcometo/static/js/runtime-main.9e9e4eaf.js",
-    "runtime-main.js.map": "/welcometo/static/js/runtime-main.9e9e4eaf.js.map",
-    "static/js/2.269c9b9d.chunk.js": "/welcometo/static/js/2.269c9b9d.chunk.js",
-    "static/js/2.269c9b9d.chunk.js.map": "/welcometo/static/js/2.269c9b9d.chunk.js.map",
-    "static/js/3.23c8bbb4.chunk.js": "/welcometo/static/js/3.23c8bbb4.chunk.js",
-    "static/js/3.23c8bbb4.chunk.js.map": "/welcometo/static/js/3.23c8bbb4.chunk.js.map",
+    "main.css": "/welcometo/static/css/main.4f732266.chunk.css",
+    "main.js": "/welcometo/static/js/main.cc0b6355.chunk.js",
+    "main.js.map": "/welcometo/static/js/main.cc0b6355.chunk.js.map",
+    "runtime-main.js": "/welcometo/static/js/runtime-main.55c14f91.js",
+    "runtime-main.js.map": "/welcometo/static/js/runtime-main.55c14f91.js.map",
+    "static/js/2.62448178.chunk.js": "/welcometo/static/js/2.62448178.chunk.js",
+    "static/js/2.62448178.chunk.js.map": "/welcometo/static/js/2.62448178.chunk.js.map",
+    "static/js/3.5a92143c.chunk.js": "/welcometo/static/js/3.5a92143c.chunk.js",
+    "static/js/3.5a92143c.chunk.js.map": "/welcometo/static/js/3.5a92143c.chunk.js.map",
     "index.html": "/welcometo/index.html",
-    "static/css/main.220c3b1c.chunk.css.map": "/welcometo/static/css/main.220c3b1c.chunk.css.map",
-    "static/js/2.269c9b9d.chunk.js.LICENSE.txt": "/welcometo/static/js/2.269c9b9d.chunk.js.LICENSE.txt",
+    "static/css/main.4f732266.chunk.css.map": "/welcometo/static/css/main.4f732266.chunk.css.map",
+    "static/js/2.62448178.chunk.js.LICENSE.txt": "/welcometo/static/js/2.62448178.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/welcometo/static/media/Timeless.9c84c17e.woff",
-    "static/media/arrow-left-white.035bd610.png": "/welcometo/static/media/arrow-left-white.035bd610.png"
+    "static/media/arrow-left-white.035bd610.png": "/welcometo/static/media/arrow-left-white.035bd610.png",
+    "static/media/canon.333000c7.png": "/welcometo/static/media/canon.333000c7.png",
+    "static/media/food.3489cb69.png": "/welcometo/static/media/food.3489cb69.png",
+    "static/media/plane.97d69ae4.png": "/welcometo/static/media/plane.97d69ae4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9e9e4eaf.js",
-    "static/js/2.269c9b9d.chunk.js",
-    "static/css/main.220c3b1c.chunk.css",
-    "static/js/main.6e507fcb.chunk.js"
+    "static/js/runtime-main.55c14f91.js",
+    "static/js/2.62448178.chunk.js",
+    "static/css/main.4f732266.chunk.css",
+    "static/js/main.cc0b6355.chunk.js"
   ]
 }
