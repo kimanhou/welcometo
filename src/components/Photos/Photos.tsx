@@ -10,21 +10,29 @@ interface IPhotosProps {
 }
 
 const Photos : React.FC<IPhotosProps> = props => {
-    const [ currentImageIndex, setCurrentImageIndex ] = useState(0);
+    const [ galleryIdx, setGalleryIdx ] = useState<number | null>(null);
     const [ fullScreenGalleryVisibile, setFullScreenGalleryVisibile ] = useState(false);
+    const showGallery = (imageIdx : number) => {
+        setFullScreenGalleryVisibile(true);
+        setGalleryIdx(imageIdx);
+    }
+    const hideGallery = () => {
+        setFullScreenGalleryVisibile(false);
+        setGalleryIdx(null);
+    }
 
     return (
         <div className={`photos-container`}>
             <div className={`photos`}>
                 {props.photos.map((t, i) => 
                     <PhotoComponent key={t.urlSmall} photo={t} setImageWidth={() => {}} 
-                        currentImageIndex={i} setCurrentImageIndex={setCurrentImageIndex}
-                        setFullScreenGalleryVisible={setFullScreenGalleryVisibile} 
+                        imageIdx={i} showGallery={showGallery}
                         hashKey={props.hashKey} isBig={false} />)}
             </div>
-            <FullScreenGallery  visible={fullScreenGalleryVisibile} setVisible={setFullScreenGalleryVisibile}
-                images={props.photos} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} 
-                hashKey={props.hashKey} />
+            {galleryIdx != null &&
+                <FullScreenGallery visible={fullScreenGalleryVisibile} hideGallery={hideGallery}
+                    images={props.photos} galleryIdx={galleryIdx} hashKey={props.hashKey} />
+            }
         </div>
     );
 }

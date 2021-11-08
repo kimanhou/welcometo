@@ -1,8 +1,6 @@
 export const myScrollTo = (id : string) => {
     const element_to_scroll_to = document.getElementById(id);
-    console.log(`Scroll to ${id}`);
     if (element_to_scroll_to != null) {
-        console.log(`${id} element found`);
         element_to_scroll_to.scrollIntoView();
     }
 }

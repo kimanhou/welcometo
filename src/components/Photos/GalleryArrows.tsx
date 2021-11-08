@@ -7,7 +7,7 @@ import arrowNextWhite from '../../images/arrow-right-white.png';
 
 interface IGalleryArrowsProps {
     currentImageIndex : number;
-    setCurrentImageIndex : React.Dispatch<React.SetStateAction<number>>;
+    setCurrentImageIndex : (value : number) => void;
     maxIndex : number;
     galleryFullScreen ?: boolean;
 }
@@ -19,13 +19,13 @@ const GalleryArrows : React.FC<IGalleryArrowsProps> = props => {
 
     const onClickPrevious = () => {
         if (props.currentImageIndex !== 0) {
-            props.setCurrentImageIndex(t => t - 1);
+            props.setCurrentImageIndex(props.currentImageIndex - 1);
         }
     }
 
     const onClickNext = () => {
         if (props.currentImageIndex !== props.maxIndex) {
-            props.setCurrentImageIndex(t => t + 1);
+            props.setCurrentImageIndex(props.currentImageIndex + 1);
         }
     }
 

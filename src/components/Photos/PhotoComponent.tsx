@@ -9,9 +9,8 @@ interface IPhotoProps {
     photo : Photo;
     setImageWidth : (width : number) => void;
     isFullScreen ?: boolean;
-    setFullScreenGalleryVisible ?: (visible : boolean) => void;
-    currentImageIndex ?: number;
-    setCurrentImageIndex ?: (currentIndex : number) => void;
+    showGallery ?: (imageIdx : number) => void;
+    imageIdx : number;
     hashKey : string;
     isBig : boolean;
 }
@@ -28,11 +27,8 @@ const PhotoComponent : React.FC<IPhotoProps> = props => {
 
     const onClick = () => {
         if (!isMobile) {
-            if (props.setFullScreenGalleryVisible !== undefined) {
-                props.setFullScreenGalleryVisible(true);
-                if (props.setCurrentImageIndex !== undefined && props.currentImageIndex !== undefined) {
-                    props.setCurrentImageIndex(props.currentImageIndex);
-                }
+            if (props.showGallery != null) {
+                props.showGallery(props.imageIdx);
             }
         }
     }
