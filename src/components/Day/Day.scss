@@ -1,5 +1,10 @@
 .day {
     margin: var(--size-margin-20) auto;
+    >.buttons-container {
+        >.previous-button {
+            margin-right: var(--size-margin-20);
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {

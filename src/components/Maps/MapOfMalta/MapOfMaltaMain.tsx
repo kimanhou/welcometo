@@ -1,5 +1,5 @@
 import React from 'react';
-import { onClickLocation, selected } from '../MapCommon';
+import { onClickLocation, selected, selectedMultiple } from '../MapCommon';
 import { IMapProps } from '../MapOfParos/MapOfParos';
 import ferry from '../../../images/ferry.png';
 import plane from '../../../images/plane.png';
@@ -27,64 +27,64 @@ const MapOfMaltaMain : React.FC<IMapProps> = props => {
 
                 <g id="sliema" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(0, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="749.09589" cx="1576.1095" />
-                    <path id="map-marker-sliema" className={`map-marker ${selected(0, props.locationNumber)}`}
+                    <path id="map-marker-sliema" className={`map-marker ${selectedMultiple([0, 6], props.locationNumber)}`}
                         d="m 1579.6591,747.29145 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(0, props.locationNumber)}`} x="1603.2279" y="693.13458" >
+                    <text className={`location-name ${selectedMultiple([0, 6], props.locationNumber)}`} x="1603.2279" y="693.13458" >
                         <tspan x="1603.2279" y="693.13458">Sliema</tspan>
                     </text>
-                    <text id="number-sliema" className={`number`} x="1563.6163" y="722.63013" >
+                    {/* <text id="number-sliema" className={`number`} x="1563.6163" y="722.63013" >
                         <tspan x="1563.6163" y="722.63013" >1</tspan>
-                    </text>
+                    </text> */}
                 </g>
 
-                <g id="st-julians" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(1, props.setLocationNumber)}>
+                <g id="st-julians" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(0, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="711.95306" cx="1547.3954" />
-                    <path id="map-marker-st-julians" className={`map-marker ${selected(1, props.locationNumber)}`}
+                    <path id="map-marker-st-julians" className={`map-marker ${selected(0, props.locationNumber)}`}
                         d="m 1550.9448,710.14858 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62423 4.8458,2.20453 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(1, props.locationNumber)}`} x="1567.1215" y="640.77496" >
+                    <text className={`location-name ${selected(0, props.locationNumber)}`} x="1567.1215" y="640.77496" >
                         <tspan x="1567.1215" y="640.77496">St Julian's</tspan>
                     </text>
-                    <text id="number-st-julians" className={`number`} x="1534.9022" y="685.4873" >
+                    {/* <text id="number-st-julians" className={`number`} x="1534.9022" y="685.4873" >
                         <tspan x="1534.9022" y="685.4873" >2</tspan>
-                    </text>
+                    </text> */}
                 </g>
 
-                <g id="valletta" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(2, props.setLocationNumber)}>
+                <g id="valletta" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(1, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="782.23877" cx="1610.8237" />
-                    <path id="map-marker-valletta" className={`map-marker ${selected(2, props.locationNumber)}`}
+                    <path id="map-marker-valletta" className={`map-marker ${selectedMultiple([1, 5], props.locationNumber)}`}
                     d="m 1614.3734,780.43432 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z" />
-                    <text className={`location-name ${selected(2, props.locationNumber)}`} x="1641.0927" y="747.5697" >
+                    <text className={`location-name ${selectedMultiple([1, 5], props.locationNumber)}`} x="1641.0927" y="747.5697" >
                         <tspan x="1641.0927" y="747.5697">Valletta</tspan>
                     </text>
-                    <text id="number-valletta" className={`number`} x="1599.7809" y="754.19177" >
+                    {/* <text id="number-valletta" className={`number`} x="1599.7809" y="754.19177" >
                         <tspan x="1599.7809" y="754.19177" >3</tspan>
-                    </text>
+                    </text> */}
                 </g>
 
-                <g id="vittoriosa" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(3, props.setLocationNumber)}>
+                <g id="vittoriosa" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(1, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="808.26239" cx="1623.0549" />
-                    <path id="map-marker-vittoriosa" className={`map-marker ${selected(3, props.locationNumber)}`}
+                    <path id="map-marker-vittoriosa" className={`map-marker ${selected(1, props.locationNumber)}`}
                         transform="matrix(1,0,0,-1,-0.6575342,1616.5521)"
                         d="m 1626.6047,806.45794 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62419 4.8458,2.2045 6.6964,1.16072 z"/>
-                    <text className={`location-name ${selected(3, props.locationNumber)}`} x="1654.7518" y="866.35236" >
+                    <text className={`location-name ${selected(1, props.locationNumber)}`} x="1654.7518" y="866.35236" >
                         <tspan x="1654.7518" y="866.35236">Vittoriosa</tspan>
                     </text>
-                    <text id="number-vittoriosa" className={`number middle-number`} x="1604.1217" y="869.64001" >
+                    {/* <text id="number-vittoriosa" className={`number middle-number`} x="1604.1217" y="869.64001" >
                         <tspan x="1604.1217" y="869.64001">3b</tspan>
-                    </text>
+                    </text> */}
                 </g>
 
-                <g id="marsaxlokk" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(4, props.setLocationNumber)}>
+                <g id="marsaxlokk" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(2, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="963.11951" cx="1686.3135" />
-                    <path id="map-marker-marsaxlokk" className={`map-marker ${selected(4, props.locationNumber)}`}
-                    d="m 1689.863,961.31507 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62423 4.8458,2.20453 6.6964,1.16072 z" />
+                    <path id="map-marker-marsaxlokk" className={`map-marker ${selected(2, props.locationNumber)}`}
+                        d="m 1689.863,961.31507 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62423 4.8458,2.20453 6.6964,1.16072 z" />
                     
-                    <text className={`location-name ${selected(4, props.locationNumber)}`} x="1719.1902" y="935.33868" >
+                    <text className={`location-name ${selected(2, props.locationNumber)}`} x="1719.1902" y="935.33868" >
                         <tspan x="1719.1902" y="935.33868">Marsaxlokk</tspan>
                     </text>
-                    <text id="number-marsaxlokk" className={`number`} x="1673.8203" y="936.65375" >
+                    {/* <text id="number-marsaxlokk" className={`number`} x="1673.8203" y="936.65375" >
                         <tspan x="1673.8203" y="936.65375" >4</tspan>
-                    </text>
+                    </text> */}
                     <circle r="7.0742612" cy="984.98633" cx="1732.6028" />
                     <text className={`location-name small`} x="1741.1508" y="992.87671" >
                         <tspan x="1741.1508" y="992.87671" >St Peter's Pool</tspan>
@@ -99,16 +99,16 @@ const MapOfMaltaMain : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="mdina" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(5, props.setLocationNumber)}>
-                    <path id="map-marker-mdina" className={`map-marker ${selected(5, props.locationNumber)}`}
+                <g id="mdina" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(3, props.setLocationNumber)}>
+                    <path id="map-marker-mdina" className={`map-marker ${selected(3, props.locationNumber)}`}
                         d="m 1333.5058,815.33343 c 8.3041,-12.26896 17.9543,-23.52836 24.4643,-37.14287 12.998,-51.5318 -67.5033,-51.99673 -55.1786,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62424 4.8458,2.20453 6.6964,1.16072 z" />
                     <circle r="7.0742612" cy="817.13788" cx="1329.9565" />
-                    <text className={`location-name ${selected(5, props.locationNumber)}`} x="1277.2604" y="855.11047" >
+                    <text className={`location-name ${selected(3, props.locationNumber)}`} x="1277.2604" y="855.11047" >
                         <tspan x="1277.2604" y="855.11047">Mdina</tspan>
                     </text>
-                    <text id="number-mdina" className={`number`} x="1317.4634" y="790.67212" >
+                    {/* <text id="number-mdina" className={`number`} x="1317.4634" y="790.67212" >
                         <tspan x="1317.4634" y="790.67212" >5</tspan>
-                    </text>
+                    </text> */}
                     <circle r="7.0742612" cy="738.41095" cx="1370.9589" />
                     <text className={`location-name small`} x="1381.8082" y="744.3288" >
                         <tspan x="1381.8082" y="744.3288" >Mosta</tspan>
@@ -121,17 +121,16 @@ const MapOfMaltaMain : React.FC<IMapProps> = props => {
                     </text>
                 </g>
 
-                <g id="gozo" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(6, props.setLocationNumber)}>
+                <g id="gozo" transform="translate(-718.94734,-182.80428)" className={`location`} onClick={() => onClickLocation(4, props.setLocationNumber)}>
                     <circle r="7.0742612" cy="337.92639" cx="980.45514" />
-                    <path id="map-marker-gozo" className={`map-marker ${selected(6, props.locationNumber)}`}
-                    d="m 984.00437,336.12194 c 8.3041,-12.26896 17.95433,-23.52836 24.46433,-37.14287 12.998,-51.5318 -67.50333,-51.99673 -55.17863,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62424 4.8458,2.20453 6.6964,1.16072 z" />
-                    
-                    <text className={`location-name ${selected(5, props.locationNumber)}`} x="937.05792" y="375.89899" >
+                    <path id="map-marker-gozo" className={`map-marker ${selected(4, props.locationNumber)}`}
+                        d="m 984.00437,336.12194 c 8.3041,-12.26896 17.95433,-23.52836 24.46433,-37.14287 12.998,-51.5318 -67.50333,-51.99673 -55.17863,0 7.1406,12.28251 15.4642,24.17066 24.0179,35.98215 3.6287,5.62424 4.8458,2.20453 6.6964,1.16072 z" />
+                    <text className={`location-name ${selected(4, props.locationNumber)}`} x="937.05792" y="375.89899" >
                         <tspan x="937.05792" y="375.89899">Gozo</tspan>
                     </text>
-                    <text id="number-gozo" className={`number`} x="967.96198" y="311.46063" >
+                    {/* <text id="number-gozo" className={`number`} x="967.96198" y="311.46063" >
                         <tspan x="967.96198" y="311.46063" >6</tspan>
-                    </text>
+                    </text> */}
                     <circle r="7.0742612" cy="330.08218" cx="923.1781" />
                     <circle r="7.0742612" cy="301.1507" cx="789.69861" />
                     <circle r="7.0742612" cy="272.87671" cx="852.8219" />

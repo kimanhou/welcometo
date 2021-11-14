@@ -4,6 +4,7 @@ import BackToTop from './BackToTop';
 import LocationComponent from './Location/LocationComponent';
 import './Day.scss';
 import Next from './Next';
+import Previous from './Previous';
 
 interface IDayComponentProps {
     day : Day;
@@ -15,6 +16,7 @@ interface IDayComponentProps {
 
 const DayComponent : React.FC<IDayComponentProps> = props => {
     const isLast = props.locationNumber == props.daysTotal - 1;
+    const isFirst = props.locationNumber == 0;
     
     return (
         <>
@@ -28,6 +30,8 @@ const DayComponent : React.FC<IDayComponentProps> = props => {
                     <div className={`buttons-container flex-row`}>
                         <BackToTop />
                         <div className={`flex-1`}/>
+                        {!isFirst && 
+                            <Previous locationNumber={props.locationNumber} setLocationNumber={props.setLocationNumber}/>}
                         {!isLast && 
                             <Next locationNumber={props.locationNumber} setLocationNumber={props.setLocationNumber}/>}
                     </div>

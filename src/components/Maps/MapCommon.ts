@@ -12,3 +12,11 @@ export const selected = (myLocation : number, locationNumber : number) => {
 
     return '';
 }
+
+export const selectedMultiple = (myLocations : number[], locationNumber : number) => {
+    if (myLocations.includes(locationNumber)) {
+        return 'selected';
+    }
+
+    return '';
+}
