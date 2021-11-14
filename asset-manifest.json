@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/welcometo/static/css/main.d1cb2eb0.chunk.css",
-    "main.js": "/welcometo/static/js/main.c4b81178.chunk.js",
-    "main.js.map": "/welcometo/static/js/main.c4b81178.chunk.js.map",
+    "main.css": "/welcometo/static/css/main.880b6f29.chunk.css",
+    "main.js": "/welcometo/static/js/main.28406006.chunk.js",
+    "main.js.map": "/welcometo/static/js/main.28406006.chunk.js.map",
     "runtime-main.js": "/welcometo/static/js/runtime-main.e69e9a6e.js",
     "runtime-main.js.map": "/welcometo/static/js/runtime-main.e69e9a6e.js.map",
     "static/js/2.c5598a3a.chunk.js": "/welcometo/static/js/2.c5598a3a.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.86f03eeb.chunk.js": "/welcometo/static/js/3.86f03eeb.chunk.js",
     "static/js/3.86f03eeb.chunk.js.map": "/welcometo/static/js/3.86f03eeb.chunk.js.map",
     "index.html": "/welcometo/index.html",
-    "static/css/main.d1cb2eb0.chunk.css.map": "/welcometo/static/css/main.d1cb2eb0.chunk.css.map",
+    "static/css/main.880b6f29.chunk.css.map": "/welcometo/static/css/main.880b6f29.chunk.css.map",
     "static/js/2.c5598a3a.chunk.js.LICENSE.txt": "/welcometo/static/js/2.c5598a3a.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/welcometo/static/media/Timeless.9c84c17e.woff",
     "static/media/arrow-left-white.035bd610.png": "/welcometo/static/media/arrow-left-white.035bd610.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.e69e9a6e.js",
     "static/js/2.c5598a3a.chunk.js",
-    "static/css/main.d1cb2eb0.chunk.css",
-    "static/js/main.c4b81178.chunk.js"
+    "static/css/main.880b6f29.chunk.css",
+    "static/js/main.28406006.chunk.js"
   ]
 }
